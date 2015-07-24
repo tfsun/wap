@@ -1,23 +1,19 @@
 body {
     color: #404040;
     text-align: center;
-    //background-color:white;
     font-size: 8pt;
     font-family: Verdana, Tahoma, sans-serif;
     background-image: url("images/background.png");
 }
 h1 {
-    text-align: center;
     font-size: 24pt;
     font-family: Tahoma, Verdana, sans-serif;
     text-shadow: 3px 3px #999999;
 }
-
 div#banner {
     background-image: url("images/bannerbg.png");
-    text-align: center;
-    //width: 800px;
     background-repeat:repeat-x;
+    height: 50px;
 }
 div#overall {
     text-align: left;
@@ -28,9 +24,28 @@ div#overall {
     margin-left: auto;
     margin-right: auto;
 }
+div#bottombar, div#Overview {
+    background-color: #A2B964;
+}
+div#bottombar {
+    clear: right;
+    text-align: center;
+    padding: 5px;
+}
 div#Overview {
     width: 250px;
     float: right;
+    font-size: 8pt;
+    font-family: rial, sans-serif;
+}
+dl.OverViewdl > dt {
+    margin: 10pt 10pt 0pt 10pt;
+    font-weight: bold;
+}
+dl.OverViewdl  dd > ul{
+    position: relative;
+    left: -30pt;
+    list-style-type: none;
 }
 div#reviews {
     width: 550px;
@@ -39,12 +54,10 @@ div#reviewsbar{
     background-image: url("images/rbg.png");
     background-repeat:repeat-x;
     height:83px;
-    //float: bottom;
 }
 img#reviewsbarimg{
     float: left;
     vertical-align: bottom
-    // todo background-size: 100%,83px;
 }
 div#rate{
     color: red;
@@ -57,26 +70,31 @@ div.reviewcol {
     display: inline;
     width: 47%; 
     margin: 1%;
-/*    margin-top: 10px;
-    margin-bottom: 10px;*/
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 div.reviewquote {
     font-size: 8pt;
     background-color: #e8dc9b;
     border: 2px gray solid;
-    //border-width: thick;
     border-radius: 10px;
     padding: 8px;
+    font-weight: bold;
+}
+img.likeimg, img.personimg {
+    float: left;
 }
 img.likeimg {
-    float: left;
     margin-right: 5px;
 }
 div.personalquote {
     font-style: italic;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
-img.personimg {
-    float: left;
+#w3ccheck {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  opacity: 0.5
 }
