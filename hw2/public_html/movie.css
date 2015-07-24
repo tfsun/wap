@@ -45,6 +45,7 @@ dl.OverViewdl > dt {
 dl.OverViewdl  dd > ul{
     position: relative;
     left: -30pt;
+    top: -8pt;
     list-style-type: none;
 }
 div#reviews {
