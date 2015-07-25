@@ -33,30 +33,16 @@ Lab #3, PHP
                         $newspages = (int)$_GET["newspages"];
                     }
                     for($i=1; $i<=$newspages; $i++) {
+                        $page_url = "http://music.yahoo.com/news/archive/$i.html"
                 ?>
-                <li><a href=<?= "http://music.yahoo.com/news/archive/$i.html" ?>>Page <?= $i ?></a></li>
+                <li><a href=<?= $page_url ?> >Page <?= $i ?></a></li>
                 <?php
                     }
                 ?>
             </ol>
         </div>
         <!-- Exercise 4: Favorite Artists (Arrays) -->
-        <!-- Favorite Artists complete, you can uncomment it to check this version
-        <div class="section">
-            <h2>My Favorite Artists</h2>
-            <ol>
-                <?php
-                    $fav_artists = array("Britney Spears", "Christina Aguilera", "Justin Bieber", "Lady Gaga");
-                    foreach ($fav_artists as $artist){       
-                ?>
-                <li><?= $artist ?></li>
-                
-                <?php
-                    }
-                ?>
-            </ol>
-        </div>
-        -->
+        <!-- Favorite Artists complete, you can uncomment it to check this version-->
         <!-- Exercise 5: Favorite Artists from a File (Files) -->
         <div class="section">
             <h2>My Favorite Artists</h2>
@@ -65,8 +51,9 @@ Lab #3, PHP
                     $fav_artists = file("favorite.txt");
                     foreach ($fav_artists as $artist)   {
                         $artistlower = strtolower($artist);
+                        $artistlower = str_replace(" ","-",$artistlower);
                 ?>
-                <li><a href=<?= "http://music.yahoo.com/videos/$artistlower/" ?>><?= $artist ?></a></li>
+                <li><a href=<?php print "http://music.yahoo.com/videos/".$artistlower ?>><?= $artist ?></a></li>
                 <?php
                     }
                 ?>
@@ -75,34 +62,51 @@ Lab #3, PHP
         <!-- Exercise 6: Music (Multiple Files) -->
         <!-- Exercise 7: MP3 Formatting -->
         <div class="section">
-                <h2>My Music and Playlists</h2>
+            <h2>My Music and Playlists</h2>
+            <ul id="musiclist">
+                <?php
+                    $songs_list = glob("songs/*.mp3"); 
+                    $songs_with_size = array();
 
-                <ul id="musiclist">
-                        <li class="mp3item">
-                                <a href="http://mumstudents.org/cs472/Labs/3/songs/be-more.mp3">be-more.mp3</a>
-                        </li>
-
-                        <li class="mp3item">
-                                <a href="http://mumstudents.org/cs472/Labs/3/songs/just-because.mp3">just-because.mp3</a>
-                        </li>
-
-                        <li class="mp3item">
-                                <a href="http://mumstudents.org/cs472/Labs/3/songs/drift-away.mp3">drift-away.mp3</a>
-                        </li>
-
-                        <!-- Exercise 8: Playlists (Files) -->
-                        <li class="playlistitem">472-mix.m3u:
-                                <ul>
-                                        <li>Hello.mp3</li>
-                                        <li>Be More.mp3</li>
-                                        <li>Drift Away.mp3</li>
-                                        <li>190M Rap.mp3</li>
-                                        <li>Panda Sneeze.mp3</li>
-                                </ul>
-                        </li>
-                </ul>
+                    foreach ($songs_list as $song) { 
+                        $song_size = filesize($song);
+                        $songs_with_size[$song] = $song_size;
+                    }
+                    arsort($songs_with_size);
+                    foreach ($songs_with_size as $key => $val) {
+                        $song_name = basename($key).PHP_EOL;
+                        $song_name = $song_name. " (" . (int)($val/1024) . ' kb)';
+                        $song_url = str_replace(" ", "%20", $key);
+                ?>
+                <li class="mp3item">
+                    <!--<a href=<?= $song_url ?>><?= $song_name ?></a>-->
+                    <a href=<?= $song_url ?>><?= $song_name ?></a><br>
+                    <audio src=<?= $song_url ?> controls="controls">Your browser does not support the audio tag.</audio>       
+                </li>
+                <?php
+                    }
+                    $m3u_list = glob("songs/*.m3u"); 
+                    foreach ($m3u_list as $m3u_element) { 
+                        $m3u_element_base = basename($m3u_element).PHP_EOL;
+                ?>
+                <li class="playlistitem"><?= $m3u_element_base ?>
+                    <ul>
+                    <?php
+                        $m3u_songs = file($m3u_element);
+                        foreach ($m3u_songs as $song_element)  {
+                            if($song_element[0]=='#') continue;
+                    ?>  
+                        <li><?= $song_element ?></li>
+                    <?php
+                        }
+                    ?>
+                    </ul>
+                </li>
+                <?php
+                    }
+                ?>
+            </ul>
         </div>
-
         <div>
                 <a href="http://validator.w3.org/check/referer">
                         <img src="http://mumstudents.org/cs472/Labs/3/w3c-html.png" alt="Valid HTML5" />
