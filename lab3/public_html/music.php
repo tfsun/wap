@@ -42,7 +42,22 @@ Lab #3, PHP
             </ol>
         </div>
         <!-- Exercise 4: Favorite Artists (Arrays) -->
-        <!-- Favorite Artists complete, you can uncomment it to check this version-->
+        <!-- Favorite Artists complete, you can uncomment it to check this version
+        <div class="section">
+            <h2>My Favorite Artists</h2>
+            <ol>
+                <?php
+                    $fav_artists = array("Britney Spears", "Christina Aguilera", "Justin Bieber", "Lady Gaga");
+                    foreach ($fav_artists as $artist){       
+                ?>
+                <li><?= $artist ?></li>
+                
+                <?php
+                    }
+                ?>
+            </ol>
+        </div>
+        -->
         <!-- Exercise 5: Favorite Artists from a File (Files) -->
         <div class="section">
             <h2>My Favorite Artists</h2>
