@@ -3,6 +3,8 @@
 name: Tengfei
 course: cs472 homework 3
 descriptio: translate hw2 static html to dynamic php page
+the zip of my own movie is mymovie.zip. the folder is lordoftherings.
+if no correct query parameter, i will give the default parameter which is "film=princessbride"
 -->
 <html>
     <head>
@@ -56,15 +58,6 @@ descriptio: translate hw2 static html to dynamic php page
                     ?>
                     <dt><?= $view[0] ?></dt><dd><?= $view[1] ?></dd>
                     <?php } ?>
-                    <dt>LINKS</dt>
-                    <dd>
-                        <ul>
-                            <li><a href="http://www.ninjaturtles.com/">The Official TMNT Site</a></li>
-                            <li><a href="http://www.rottentomatoes.com/m/teenage_mutant_ninja_turtles/">RT Review</a></li>
-                            <li><a href="http://www.rottentomatoes.com/">RT Home</a></li>
-                            <li><a href="http://mumstudents.org/cs472/">CS472</a></li>
-                        </ul>  
-                    </dd>
                 </dl>
             </div>
             <div id="reviews">
