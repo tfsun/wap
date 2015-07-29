@@ -10,7 +10,7 @@
 ?>
 <div>
     <h1>Thank you!</h1>
-    <p>welcome to NerdLuv, Roy McElmurry!</p>
+    <p>welcome to NerdLuv, <?= $_GET["Name"] ?>!</p>
     <p>Now <a href='matches.php'>log in to see your matches!</a>   </p>
 </div>
 
