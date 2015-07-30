@@ -6,7 +6,7 @@
         <fieldset>
             <legend>New User Signup</legend>
             <strong>Name: </strong><input type="text" name="Name" size="16" />  <br />
-            <strong>Password: </strong><input type="password" name="Name" size="16" />  <br />
+            <strong>Password: </strong><input type="password" name="password" size="16" />  <br />
             <strong>Gender: </strong>
                 <label><input type="radio" name="Gender" value="M" /> Male</label>
                 <label><input type="radio" name="Gender" value="F" checked /> Female</label>

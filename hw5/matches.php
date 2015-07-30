@@ -6,6 +6,7 @@
         <fieldset>
             <legend>Returning User:</legend>
             <strong>Name: </strong><input type="text" name="Name" size="16" />  <br />
+            <strong>Password: </strong><input type="password" name="password" size="16" />  <br />
             <input type="submit" value="View My Mathes"/>
         </fieldset>
             

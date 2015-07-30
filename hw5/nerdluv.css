@@ -105,3 +105,8 @@ footer {
 	font-size: x-small;
 	clear: both;
 }
+
+.err {
+	color: red;
+}
+

@@ -1,58 +1,49 @@
-<?php include("top.html"); ?>
+<?php 
+include("top.html"); 
+include ("db-connection.php");
+?>
 <!-- this page is used for hanle user searing request -->
 <h1>Matches for <?= $_POST["Name"] ?></h1>
 <?php
-    $users = get_mathes();
+    $users = get_mathes($db, $_POST["Name"], $_POST["password"]);
     foreach ($users as $cur_user)
     {
 ?>
 <div class="match">
-    <p><img src="images/user.jpg" alt="user" /><?= $cur_user[0] ?></p>  
+    <p><img src="images/user.jpg" alt="user" /><?= $cur_user["name"] ?></p>  
     <ul>
-        <li><strong>gender:</strong> <?= $cur_user[1] ?></li>
-        <li><strong>age:</strong><?= $cur_user[2] ?></li>
-        <li><strong>type:</strong><?= $cur_user[3] ?></li>
-        <li><strong>OS:</strong><?= $cur_user[4] ?></li>
+        <li><strong>gender:</strong> <?= $cur_user["gender"] ?></li>
+        <li><strong>age:</strong><?= $cur_user["age"] ?></li>
+        <li><strong>type:</strong><?= $cur_user["type1"].$cur_user["type2"].$cur_user["type3"].$cur_user["type4"] ?></li>
+        <li><strong>OS:</strong><?= $cur_user["os"] ?></li>
     </ul>
 </div>
 <?php } ?>
 <?php include("bottom.html"); ?>
 <?php 
 //get all satisfied users
-    function get_mathes(){
+    function get_mathes($dbconn, $user_name, $pwd){
+        $math_uses = array();
         if(FALSE == isset($_POST["Name"]))
         {
-            exit();
+            return $math_users;
         }
-        $users = file("singles.txt");
-        $Name=NULL;
-        $Gender=NULL; 
-        $Age=NULL;
-        $Personalitytype=NULL;
-        $FavoriteOS=NULL;
-        $min=NULL;
-        $max=NULL;
-        $math_uses = array();
-        foreach ($users as $value) {
-            list($Name, $Gender, $Age,$Personalitytype,$FavoriteOS,$min,$max) = explode(",", $value); 
-            if(strcmp($_POST["Name"], $Name) ==0) {
-                break;
-            }
+        $stmt = $dbconn->prepare("SELECT * FROM singles WHERE name = :name");
+        $stmt->execute(array(':name' => $user_name));
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        if(false == $result){
+            header('Location: error.php?err=user not exist!');
         }
-        foreach ($users as $value) {
-            list($tName, $tGender, $tAge,$tPersonalitytype,$tFavoriteOS,$tmin,$tmax) = explode(",", $value); 
-            if(strcmp($Gender, $tGender)!=0 
-                    && $tAge <= $max && $tAge >= $min
-                    && strcmp($FavoriteOS, $tFavoriteOS)==0) {
-                        for ($index = 0;$index < strlen($tPersonalitytype);$index++) {
-                            if($Personalitytype[$index]==$tPersonalitytype[$index]){
-                                $tuser = array($tName,$tGender,$tAge,$tPersonalitytype,$tFavoriteOS);
-                                array_push($math_uses, $tuser);
-                                break;
-                            }
-                        }
-            }
+        else if(false == password_verify($pwd, $result["pass"]) ){
+            header('Location: error.php?err=password error!');
         }
+        $stmt = $dbconn->prepare("SELECT * FROM singles WHERE gender <> :gender
+                                AND age >= :min AND age <= :max AND os = :os AND
+                                (type1 = :type1 OR type2 = :type2 OR type3 = :type3 OR type4 = :type4)");
+        $stmt->execute(array(':gender' => $result["gender"], ':min' => $result["min"], ':max' => $result["max"], 
+                                ':os' => $result["os"], ':type1' => $result["type1"], ':type2' => $result["type2"], 
+                                ':type3' => $result["type3"], ':type4' => $result["type4"]));
+        $math_uses = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $math_uses;
     }
 ?>
