@@ -27,6 +27,7 @@
         exit();
     }
     $_SESSION['username'] = $user_name;
+    setcookie("user_name", $user_name, time()+60);
     $stmt = $db->prepare("SELECT * FROM singles WHERE gender <> :gender
                             AND age >= :min AND age <= :max AND os = :os AND
                             (type1 = :type1 OR type2 = :type2 OR type3 = :type3 OR type4 = :type4)");
