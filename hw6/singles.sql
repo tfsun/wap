@@ -1,0 +1,77 @@
+-- user: match-maker
+-- pass: meant2B
+
+DROP DATABASE IF EXISTS nerdluv;
+CREATE DATABASE nerdluv;
+USE nerdluv;
+
+DROP TABLE IF EXISTS singles;
+CREATE TABLE `singles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `pass` varchar(256) DEFAULT NULL, 
+  `gender` char(1) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `type1` char(1) DEFAULT NULL,
+  `type2` char(1) DEFAULT NULL,
+  `type3` char(1) DEFAULT NULL,
+  `type4` char(1) DEFAULT NULL,
+  `os` varchar(20) DEFAULT NULL,
+  `min` int(11) DEFAULT NULL,
+  `max` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1; 
+
+INSERT INTO singles VALUES
+(NULL, 'Ada Lovelace', 'y$OIzqcIA3al86VeGj5OHoKeab7jy.tkJNBbaOeOcV.ZN/VuS5TC4CK','F',96,'I','S','T','J','Linux',24,99),
+(NULL, 'Adele Goldberg', 'y$MNpOt4Lm5C7VORMQSLuZCOuuCntJrX7Ey0LDglf5LPHitzopi7DaW','F',65,'E','N','F','J','Windows',50,70),
+(NULL, 'Alan Turing', 'y$zsIfl3bazYCZImhJHqhzFeN/Q1CyBW2AC1x4/3r.42ySbsdPEXyW2','M',41,'E','S','T','P','Mac OS X',31,50),
+(NULL, 'Anakin Skywalker', 'y$R9BpcF2I8OaojrTmjMn7nO8g8q7yumE9BJmmptGIRF73TAGPBEzoa','M',27,'I','N','T','J','Linux',15,30),
+(NULL, 'Angry Video Game Nerd', 'y$k2113suE88J9JmKXcHu3SeJfC7CToVDzQ/pJsode/swoghAtokQ5W','M',29,'I','S','T','J','Mac OS X',1,99),
+(NULL, 'Anita Borg', 'y$ptUCWVacvfjTfjg26SOuJe0MFno2DR3.S3jGLvoX6nev29pQunGvS','F',54,'I','S','F','P','Windows',41,55),
+(NULL, 'Barbara Liskov', 'y$QLOXioGG.jBQm.TyHwnWxeohzM63/FQLBPKuvIWGcfANK5dV1Vvua','F',71,'E','S','F','J','Mac OS X',41,76),
+(NULL, 'Bill Gates', 'y$la42abZVRiMxWafso5Wi4u90WzBMzkBENaXabiVaUQZuEZ7Y7XGVW','M',52,'I','N','T','J','Windows',2,99),
+(NULL, 'Bill Joy', 'y$zse7Gw21fHQXNRRzBq9JeOS9iNzjwJDnLksAAxJUyiSnBcyk6GEem','M',54,'E','N','F','P','Linux',50,70),
+(NULL, 'Bjarne Stroustroup', 'y$FSSoO4tWjylAab.4QzzF6utroGYAlikX268OU6/RMm0mSbR7etfXC','M',59,'I','N','F','J','Windows',40,62),
+(NULL, 'Buffy Summers', 'yAhj1GTinxE0oVMnHHf4sOY6JBQgRIDtrmu..OgEGVHmjJb3hsEXe','F',27,'I','N','T','P','Windows',18,49),
+(NULL, 'Charles Babbage', 'yLOh1CmKskdiA7FHRyRK.OH4UnrG1Pq/H8jb7NrET1AqisYxicwve','M',79,'E','S','F','P','Linux',30,82),
+(NULL, 'Dana Scully', 'y$Lr2fUHNa3BMy192gsCYAIOmxaPDoI1XUcvL9/QelvuMUltLT3apCa','F',41,'I','S','T','J','Mac OS X',36,54),
+(NULL, 'Deanna Troi', 'y$ES7zgVW0abAfHqamgOkXcOwKkZVXIQgYWJo22ujdccyAf9wKRN7lC','F',53,'E','N','F','J','Mac OS X',32,48),
+(NULL, 'Donald Knuth', 'yYk9hDaS64XvJDmK99DtVeixY3zOkDsiTcCUrxA2DHNtR8Q.uTeNy','M',70,'I','N','T','J','Linux',12,17),
+(NULL, 'Edsger Dijkstra', 'y$EsLMsYPiDmFzJqEBeCake.BnLGibG06/GALlwA0PQGPK0ZJghJBTu','M',72,'I','S','T','P','Linux',16,58),
+(NULL, 'Ellen Ripley', 'y$Nl0mD4Ge9baD8OoE5vLXN.RNS7Q9V6ZlWIlObupGr5MvOppfxVqJi','F',35,'E','S','F','J','Linux',20,40),
+(NULL, 'Frances Allen', 'y$0hUTiYi3yb2TJOqSxBuwXelPykvcE25u3NI5bjS2cVZa4I8JJA3O6','F',78,'E','S','T','P','Linux',67,78),
+(NULL, 'Gordon Moore', 'y$dgjO7UKfywxpkLzLwOHiiep2QMzkRazCbY/9ea7uqUzNXoVEknGTO','M',81,'E','N','F','P','Windows',60,99),
+(NULL, 'Grace Hopper', 'y$BmkxiGP/69B6bWM5RjVpwuRB3AiDmaZFMiUWzGLKTYCvFg5NwlYuK','F',87,'I','S','F','P','Windows',47,80),
+(NULL, 'Jadzia Dax', 'y$fiF/3wk55MQe28jn5YM1fOnseB4iDx.XsItjMkwjZThWZkIaPmzqK','F',46,'E','N','F','J','Mac OS X',18,32),
+(NULL, 'James Gosling', 'y$edkqZFoPjqOhdBY/N5p3gOwZofhONrqkyCcPCity4PVpjHHKPQT4y','M',55,'E','S','F','J','Linux',18,40),
+(NULL, 'Jeannette Wing', 'yCuC/X.1LfWYAr8u.u0FNeqdspFtrqQ4d/DXyLoMfJV3kCqh78/ry','F',38,'I','N','T','P','Mac OS X',45,60),
+(NULL, 'Kathryn Janeway', 'y$LVYc1/J33toai9pTk8IDReagf8pMwhNvbnC8kDw4zNCMS32fS0GX2','F',49,'E','S','T','J','Windows',30,55),
+(NULL, 'Lara Croft', 'y$KaZGPKUX1SygT8uJ3kaJfOStSaanTxiPnjtw.zEWHM2VnlOUw1zdu','F',23,'E','N','T','P','Linux',18,30),
+(NULL, 'Leeloo', 'y$SX40f39VYC2qh.IkGJsoBuF3jQa/F7ffwWZZkcLCCZ5NYgYja.wrO','F',19,'I','S','T','J','Linux',1,99),
+(NULL, 'Leia Organa', 'y$b/AcsKVTou64MWZqbRK2Y.otbVk5X8YWhBhSX.yACX0yYn7vUzTtm','F',53,'I','S','F','J','Windows',20,60),
+(NULL, 'Lenore Blum', 'yUQ3QCVV5r9OIvT.KKVwTuJFmwAuG/V26dZDFBEgFJt4Ji3S8sQmW','F',70,'I','N','T','P','Mac OS X',66,99),
+(NULL, 'Marissa Mayer', 'yBNki.M8t3FHjOUOVAAYeEYCZmCJ/FpcdQdtdSSv2Kq73Eq3kGFi','F',35,'E','N','T','P','Linux',20,40),
+(NULL, 'Mary Lou Jepsen', 'y$0CFzV1XHZmpkoWQn8kIDhe.oAtv7.qR2uXe6xqvDsBM0PTrwKprJa','F',45,'I','S','T','J','Windows',10,80),
+(NULL, 'Ms Frizzle', 'yCt.5wBl5mH2M68GkM9HEObkQVxGsbmNxOx/KWzXgGtfReqJ/4z9K','F',39,'E','N','T','P','Mac OS X',19,49),
+(NULL, 'Natalie Portman', 'y$yruT2SGo4iYx1QNtYHrSLelaSBG00WRS0mwFoyXSRPj5oafEUDGse','F',26,'I','N','F','J','Mac OS X',20,39),
+(NULL, 'Niklaus Wirth', 'y$fYrBEhx2cat77KoQCR9jJ.cdyrau/EtCYYKR4VZ6wDdf17bm3GqQ.','M',76,'E','N','F','J','Windows',50,77),
+(NULL, 'Nostalgia Critic', 'y$wDfmy0T0VSLRes/sh7tqS.KAxr84nzq5B5kd/aANojFuXDCzVddAC','M',28,'E','N','T','J','Linux',12,79),
+(NULL, 'Nyota Uhura', 'y$rEIsKQvCxlPi5Kx8abMwH.WGM7AHV4fJwfkvSZs97MXlYCjZjWBSO','F',77,'E','N','F','P','Mac OS X',70,99),
+(NULL, 'Oldspice Guy', 'y$ChncdGTtCAwWCDKDjeIn5OuyTJ4Y9Y/jZXcUny.NJIPudvB2LZare','M',36,'E','N','T','J','Windows',1,99),
+(NULL, 'Rasmus Lerdorf', 'y.k9bWEEom9sFW3BTU/D6u1SxezvZZEsYOuGyhYELmYxlVBUCKhbq','M',41,'E','N','T','P','Linux',15,35),
+(NULL, 'Richard Stallman', 'y$Ca/5rZ7mWO/NwaN/QD9pLO/fhEJmSrDVE7cnWskhn9El0GZMzWUsW','M',57,'I','S','F','J','Linux',46,56),
+(NULL, 'River Tam', 'y$sk/b5yruI6zdKWga8WHdb.NpmBRmVrxhWrbvkvK2p6LzWhdBwyTMm','F',26,'E','N','T','J','Linux',18,25),
+(NULL, 'Roberta Williams', 'y$RAELaME8fY4zsKW/YBt/qe5N3iV2Up0W8Vn6O2P5N3Q00dXuzlaRW','F',57,'E','N','F','P','Windows',54,67),
+(NULL, 'Rosie O Donnell', 'y$L6Hy8pI4WT.7gbXDOQI7KO9PAE0vb4TRxWGL5acSRkpU02YuvEjNG','F',46,'E','N','F','J','Windows',30,50),
+(NULL, 'Sarah Connor', 'y$tVipwl7GMzqAe.FrZ.Zicuy2NCL/FvM4zU6jA1nAyNvkEs1yQHUhe','F',53,'I','S','F','P','Windows',49,67),
+(NULL, 'Seven of Nine', 'y$nevoFVtxLZU4Vi.oJ18z.u0tB6k756jthooB0pfiP.JFk46FGBVXu','F',40,'I','S','T','J','Windows',12,50),
+(NULL, 'Stewie Griffin', 'y$P72GO12MbR2RNR/MwMgJceSnEVXmaMrKniK579.q0NmqubPfe9n9m','M',1,'I','N','T','P','Mac OS X',1,59),
+(NULL, 'Stuart Reges', 'y$VySzjLmeZN1/NdLzm2syW.tSxUClBESiFjc84K8iuX069PzYS5ppa','M',48,'I','N','F','P','Mac OS X',18,35),
+(NULL, 'Tpol', 'y$eHBjkHJcRlpTEWMMEQCxpuUNEzE1CP0qHmcGqD63mOXmoPbBNwlr.','F',35,'I','S','T','J','Windows',30,39),
+(NULL, 'Trinity', 'y$ngxnCL074ZzEA2WgPFH2m.RCgZbxNbdSQjaAnSbagxlEZr01aYavm','F',42,'E','S','F','P','Linux',35,55),
+(NULL, 'Tyler Durden', 'y$iZksoWjv.Gc1bxVzGiMJO.BdOl289HDGPfUoFRMSUw72oyP7jO.ci','M',46,'E','N','F','P','Mac OS X',20,39),
+(NULL, 'Valentina Tereshkova', 'y$oospm3s4ZYqEcKlPOZNEi.tHw475lle/hYscb7RzVwCYgJzVi.s3y','F',71,'E','N','T','J','Mac OS X',55,65),
+(NULL, 'Vint Cerf', 'y$dI0YrXVvE9AM0wXejYPkVOjbBrIYWx6.CrEeHVm4ZJIk3EwIYo.86','M',67,'I','S','F','P','Mac OS X',28,55),
+(NULL, 'Yukihiro Matsumoto', 'y$QWK1tUetopToZW9fggIMYe/HKL/MnUf6XzvrUt9I1zprY8x3FgMaa','M',45,'E','N','T','P','Mac OS X',10,25),
+(NULL, 'Zelda', 'y$tF5Sx4sjOD0yMY7lJIVrUOm.tlSqrItHUJRGBzlXGhQEPinmCDeVq','F',59,'E','S','T','P','Windows',40,62);
