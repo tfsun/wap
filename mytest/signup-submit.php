@@ -6,10 +6,15 @@ include("top.html");
 
 <!-- this page is used for handle requesting for registering user.  -->
 <?php
+    echo $_GET["Name"];
+    exit;
+    header('Location: signup.php');
+    exit();
     if(false == isset($_GET["Name"]) || strlen($_GET["Name"]) < 1) {
         $_SESSION["error"] = "must input name!";
         header('Location: login.php');
     }
+    
     if(false == isset($_GET["password"]) || strlen($_GET["password"]) < 1)  {
         $_SESSION["error"] = "must input password!";
         header('Location: login.php');
