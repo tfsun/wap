@@ -3,33 +3,59 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <link rel="stylesheet" type="text/css" href="ascii.css">
+        <script src="ascii.js" type="text/javascript"></script>
+        <script src="animation.js" type="text/javascript"></script>
+        <title>CS472: ASCII Animation Viewer</title>
     </head>
     <body>
-        <fieldset>
-            <label>CS472: ASCII Animation Viewer</label>  <br />
-            <textarea rows="8" cols="40"></textarea>
-            <fieldset>
-                <legend>Play Controls:</legend>
-                <button>start</button> <br />
-                <button>stop</button> 
-            </fieldset>
-            <fieldset>
-                <legend>Animation:</legend>
-                <select>
-                    <option>Blank</option>
-                </select>
-            </fieldset>
-            <fieldset>
-                <legend>Size:</legend>
-                <select>
-                    <option>Medium</option>
-                </select>
-            </fieldset>
-            <fieldset>
-                <legend>Speed:</legend>
-                <input type="checkbox" />Turbo
-            </fieldset>
-        </fieldset>>
+        <fieldset class="viewbox">
+            <div class="title">CS472: ASCII Animation Viewer</div>
+            <textarea rows="20" cols="80"></textarea>
+            <div id="controls">
+                <fieldset>
+                    <legend>Play Controls:</legend>
+                    <button id="start">start</button>
+                    <button id="stop">stop</button> 
+                </fieldset>
+                <fieldset>
+                    <legend>Animation:</legend>
+                    <select id="animation">
+                        <option value="Blank" selected>Blank</option>
+                        <option value="Exercise" >Exercise</option>
+                        <option value="Juggler">Juggler</option>
+                        <option value="Bike">Bike</option>
+                        <option value="Dive">Dive</option>
+                        <option value="Custom">Custom</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Size:</legend>
+                    <select id="size">
+                        <option value="7pt">Tiny</option>
+                        <option value="10pt">Small</option>
+                        <option value="12pt" selected>Medium</option>
+                        <option value="16pt">Large</option>
+                        <option value="24pt">Extra Large</option>
+                        <option value="32pt">XXL</option>            
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Speed:</legend>
+                    <input id="speed" type="checkbox" />Turbo</label>
+                </fieldset>
+            </div>
+        </fieldset>
+        <div id="w3ccheck">
+            <a href="http://validator.w3.org/check/referer">
+                <img src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png" alt="Valid HTML5">
+            </a> <br />
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img src="http://mumstudents.org/cs472/2014-09/images/w3c-css.png" alt="Valid CSS">
+            </a> <br />
+            <a href="https://webster.cs.washington.edu/jslint/?referer">
+                <img src="https://webster.cs.washington.edu/w3c-js.png" alt="Valid JS" />
+            </a>
+	</div>
     </body>
 </html>
