@@ -4,8 +4,13 @@ function pageLoad() {
   document.getElementById("Malkovitch").onclick = Malkovitch;
 }
 var timer = null;
-var size = 12;
 function makebiger() {
+  alert("Hello, world!");
+  var size = parseInt(document.getElementById("texta").style.fontSize);
+  if (isNaN(size)) {
+    size = 12;  
+  }
+  document.getElementById("texta").style.fontSize = size + "pt";
   if (timer == null) {
     timer = setInterval(biger, 500);
   } else {
@@ -15,6 +20,7 @@ function makebiger() {
 }
 function biger()
 {
+    var size = parseInt(document.getElementById("texta").style.fontSize);
     size += 2;
     document.getElementById("texta").style.fontSize = size + "pt";
 }
