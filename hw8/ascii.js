@@ -54,8 +54,8 @@ function selectAnimation() {
     document.getElementById("texta").value = ANIMATIONS[animName];
 }
 function selectSize() {
-    var animSize = document.getElementById("size").value;
-    document.getElementById("texta").style.fontSize = animSize;
+    var animSize = parseInt(document.getElementById("size").value, 10);
+    document.getElementById("texta").style.fontSize = animSize + "pt";
 }
 /*
 function start() {
