@@ -1,3 +1,4 @@
+"use strict";
 window.onload = function(){
     document.getElementById("start").onclick = start;
     document.getElementById("stop").onclick = stop;
