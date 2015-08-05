@@ -5,17 +5,19 @@ body, button {
 }
 fieldset.viewbox {
     background-color: #CCCCFF;
-    width: 90%;
-    height: 400pt;
+}
+fieldset div.title, fieldset div.text {
+    text-align: center;
 }
 fieldset div.title {
     font-size: 32pt;
     font-weight: bold;
-    text-align: center;
 }
 textarea {
     font-family: monospace;
     font-size: 12pt;
+    width: 90%;
+    height: 400pt;
 }
 #controls {
     text-align: center;
@@ -26,6 +28,10 @@ textarea {
     display: inline;
 }
 #w3ccheck {
-  position: fixed;
-  right: 0px;
+    position: relative;
+    left: 20px;
+    text-align: right;
+}
+#w3ccheck a {
+    display:block;
 }
