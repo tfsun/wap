@@ -1,0 +1,27 @@
+
+1,undefined889101
+
+2,
+var obj = {
+ "name" : "fred",
+ "major" : "music",
+ 'mult': function(a, b) {
+     if(a<b) {
+         return a;
+     }
+     else if (a==b) {
+        return a * b;
+     }
+     else {
+         return b;
+     }
+  }
+};
+
+3, method often exists in a function. it can access the local variables in the function.
+
+4, When using Java, inside an object's method, the object refers to itself as this
+
+5, When using JavaScript, inside an object's method, the object refers to itself as this
+
+6, When using JavaScript, inside a function, the object refers to itself as this, the object is a global object. Because all code is executed inside of a global object

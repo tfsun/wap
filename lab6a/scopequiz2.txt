@@ -1,0 +1,18 @@
+
+1, 10
+
+2, 
+setTimeout(booyah, 2000) will execute booyah after 2000ms
+setTimeout(booyah(), 2000)  will execute booyah immediately.
+
+3, both alerts display 6;
+
+4,
+function booyah1(){
+    alert("BOOYAH!");
+}
+function booyah2(){
+    setTimeout(booyah1, 2000);
+}
+setTimeout(booyah1, 2000);
+setTimeout(booyah2(), 2000);
