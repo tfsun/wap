@@ -1,3 +1,4 @@
+ "use strict";
  var rudyTimer= (function() {
     var timer = null;  // stores ID of interval timer
     function rudy() {   // called each time the timer goes off
@@ -23,7 +24,7 @@
         };
         accounts[accounts.length] = account;
         var text = "";
-        for (index = 0; index < accounts.length; index++) {
+        for (var index = 0; index < accounts.length; index++) {
             text += "Account name: " + accounts[index].name + " balance: " + accounts[index].deposit + "\n";
 //            var tmpAccount = (function(n) {
 //                return function() { return accounts[n]; }
@@ -31,7 +32,7 @@
 //            text += "Account name: " + tmpAccount.name + " balance: " + tmpAccount.deposit + "\n";
         }
         document.getElementById("texta").innerHTML = text;
-     }
+     };
  })();
 /*
 function pageLoad() {
