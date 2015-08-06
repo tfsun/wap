@@ -12,25 +12,26 @@
       }
     };
  })(); 
- var accounts = [];
- var newAccount = (function() {
-     var name = document.getElementById("name").value;
-     var deposit = document.getElementById("deposit").value;
-     var account = {
-         'name' : name,
-         'deposit' :deposit
-     };
-     
+
+ var newAccount = (function() { 
+     var accounts = [];
      return function printAccounts() {
-        alert(account.name);
+        var name = document.getElementById("name").value;
+        var deposit = document.getElementById("deposit").value;
+        var account = {
+            'name' : name,
+            'deposit' :deposit
+        };
         accounts[accounts.length] = account;
         var text = "";
         for (index = 0; index < accounts.length; index++) {
-            alert(accounts[index].name);
+            text += "Account name: " + name + " balance: " + deposit + "\n";
+            //(accounts[index].name);
             // += "<li>" + accounts[index].name + ":" + accounts[index].deposit + "</li>";
-            //document.getElementById("texta").innerHTML += text;
+            
             //document.write(text);
         }
+        document.getElementById("texta").innerHTML = text;
      }
  })();
 /*
