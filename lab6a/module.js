@@ -12,9 +12,8 @@
       }
     };
  })(); 
-
+ var accounts = [];
  var newAccount = (function() { 
-     var accounts = [];
      return function printAccounts() {
         var name = document.getElementById("name").value;
         var deposit = document.getElementById("deposit").value;
@@ -25,11 +24,11 @@
         accounts[accounts.length] = account;
         var text = "";
         for (index = 0; index < accounts.length; index++) {
-            text += "Account name: " + name + " balance: " + deposit + "\n";
-            //(accounts[index].name);
-            // += "<li>" + accounts[index].name + ":" + accounts[index].deposit + "</li>";
-            
-            //document.write(text);
+            text += "Account name: " + accounts[index].name + " balance: " + accounts[index].deposit + "\n";
+//            var tmpAccount = (function(n) {
+//                return function() { return accounts[n]; }
+//            })(index)(); 
+//            text += "Account name: " + tmpAccount.name + " balance: " + tmpAccount.deposit + "\n";
         }
         document.getElementById("texta").innerHTML = text;
      }

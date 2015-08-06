@@ -1,3 +1,10 @@
 #accountDiv {
     margin-top: 20px;
 }
+div.acntlist {
+    margin-bottom: 3px;
+}
+textarea {
+    width: 60%;
+    height: 200pt;
+}
