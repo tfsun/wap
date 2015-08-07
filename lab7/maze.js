@@ -5,7 +5,7 @@ $(document).ready(function(){
     $(".boundary").mouseover(function(){
         checkHit();
     }); 
-        $(".example").mouseover(function(){
+    $("#maze").mouseleave(function(){
         checkHit();
     }); 
     $("#end").mouseover(function(){
@@ -34,10 +34,6 @@ $(document).ready(function(){
             },1000);
         }
     }
-    $("#maze").after('<div id="hidden" style="font-size: 5px; width:100%;">.</div>');
-    $("#maze").siblings().mouseover(function(){
-        checkHit();
-    }); 
 });
 
 
