@@ -1,0 +1,21 @@
+1,
+the jQuery function
+refers to the global jQuery function/object or the $ function depending on the context
+The $ function always (even for ID selectors) returns an array-like object called a jQuery object.
+a jQuery object
+the object returned by the jQuery function that often represents a group of elements
+
+2,
+yes, the jQuery function refers to the global jQuery function/object or the $ function depending on the context
+
+3,
+var f = function() {alert("Yea, it's Saturday!");};
+f["temperature"] = "72 degrees";
+f["displayTemperature"] = function(){ alert(f["temperature"]);};
+
+4,
+4 overloaded signatures of the jQuery function: getter, setter, multi-setter, modifier.
+getter: get the property of the object.
+setter: set the property of the object.
+multi-setter: set values to multiple properties
+modifier: modify the value for existing property
