@@ -3,14 +3,14 @@ $(document).ready(function(){
     var tiles = []; 
     function initTiles() {
         for(var i=0; i<16; i++){
-            var x = parseInt((i % 4) * 100) ;
+            var x = parseInt((i % 4) * 100, 10) ;
             var y = (Math.floor(i / 4) * 100) ;
             var tile = {
                 "value" : i+1,
                 "x" : x,
                 "y" : y,
                 "bx" : -x,
-                "by" : -y,
+                "by" : -y
             };
             tiles[i] = tile;
         }
@@ -58,8 +58,7 @@ $(document).ready(function(){
             }
             for(var j=i+1; j<16; j++)
             {
-                if(tiles[i].value !== -1 && tiles[i].value !== -1
-                        && tiles[i].value > tiles[j].value) {
+                if(tiles[i].value !== -1 && tiles[j].value !== -1 && tiles[i].value > tiles[j].value) {
                     inversion++;
                 }
             }
@@ -75,7 +74,7 @@ $(document).ready(function(){
     });
     $(".puzzlepiece").each(function(){
         $(this).click(function(){
-            var val = parseInt($(this).text());
+            var val = parseInt($(this).text(), 10);
             var poss = getChangePos(val);
             //alert(poss[0] + "----" + poss[1]);
             if(poss[0] !== -1 && poss[1] !== -1){
@@ -85,7 +84,7 @@ $(document).ready(function(){
         });
         $(this).hover(
             function(){
-                var val = parseInt($(this).text());
+                var val = parseInt($(this).text(), 10);
                 var poss = getChangePos(val);
                 if(poss[0] !== -1 && poss[1] !== -1)
                 {
@@ -93,7 +92,7 @@ $(document).ready(function(){
                 }
             },
             function(){
-                var val = parseInt($(this).text());
+                var val = parseInt($(this).text(), 10);
                 var poss = getChangePos(val);
                 if(poss[0] !== -1 && poss[1] !== -1)
                 {
@@ -107,10 +106,10 @@ $(document).ready(function(){
             for(var i=0; i< 16; i++) {
                 if(tiles[i].value === val) {
                     ret[0] = i;
-                    if(true === canChange(i,i-4)) ret[1] = i-4;
-                    else if(true === canChange(i,i-1)) ret[1] = i-1;
-                    else if(true === canChange(i,i+1)) ret[1] = i+1;
-                    else if(true === canChange(i,i+4)) ret[1] = i+4;
+                    if(true === canChange(i,i-4)) { ret[1] = i-4; }
+                    else if(true === canChange(i,i-1)) { ret[1] = i-1; }
+                    else if(true === canChange(i,i+1)) { ret[1] = i+1; }
+                    else if(true === canChange(i,i+4)) { ret[1] = i+4; }
                     break;
                 }
                 
