@@ -1,0 +1,184 @@
+1,
+<!-- INSERT YOUR JQUERY CODE HERE -->
+var text = $("body p").eq(0).text();
+$("body p").eq(1).text(text);
+
+2,
+W3Schools jQuery Quiz
+jQuery QUIZ	Points: 23 out of 25
+1. Which of the following is correct?
+
+You answered:
+
+jQuery is a JavaScript Library
+ Correct Answer!
+
+2. jQuery uses CSS selectors to select elements?
+
+You answered:
+
+True
+ Correct Answer!
+
+3. Which sign does jQuery use as a shortcut for jQuery?
+
+You answered:
+
+the $ sign
+ Correct Answer!
+
+4. Look at the following selector: $("div"). What does it select?
+
+You answered:
+
+All div elements
+ Correct Answer!
+
+5. Is jQuery a library for client scripting or server scripting?
+
+You answered:
+
+Client scripting
+ Correct Answer!
+
+6. Is it possible to use jQuery together with AJAX?
+
+You answered:
+
+Yes
+ Correct Answer!
+
+7. The jQuery html() method works for both HTML and XML documents
+
+You answered:
+
+False
+ Correct Answer!
+
+8. What is the correct jQuery code to set the background color of all p elements to red?
+
+You answered:
+
+$("p").css("background-color","red");
+ Correct Answer!
+
+9. With jQuery, look at the following selector: $("div.intro"). What does it select?
+
+You answered:
+
+ Wrong Answer!
+
+10. Which jQuery method is used to hide selected elements?
+
+You answered:
+
+hide()
+ Correct Answer!
+
+11. Which jQuery method is used to set one or more style properties for selected elements?
+
+You answered:
+
+css()
+ Correct Answer!
+
+12. Which jQuery method is used to perform an asynchronous HTTP request?
+
+You answered:
+
+jQuery.ajax()
+ Correct Answer!
+
+13. What is the correct jQuery code for making all div elements 100 pixels high?
+
+You answered:
+
+$("div").height(100)
+ Correct Answer!
+
+14. Which statement is true?
+
+You answered:
+
+To use jQuery, you can refer to a hosted jQuery library at Google
+ Correct Answer!
+
+15. What scripting language is jQuery written in?
+
+You answered:
+
+JavaScript
+ Correct Answer!
+
+16. Which jQuery function is used to prevent code from running, before the document is finished loading?
+
+You answered:
+
+$(document).ready()
+ Correct Answer!
+
+17. Which jQuery method should be used to deal with name conflicts?
+
+You answered:
+
+noConflict()
+ Correct Answer!
+
+18. Which jQuery method is used to switch between adding/removing one or more classes (for CSS) from selected elements?
+
+You answered:
+
+toggleClass()
+ Correct Answer!
+
+19. Look at the following selector: $("div p"). What does it select?
+
+You answered:
+
+All p elements inside a div element
+ Correct Answer!
+
+20. Is jQuery a W3C standard?
+
+You answered:
+
+No
+ Correct Answer!
+
+21. Look at the following selector: $("p#intro"). What does it select?
+
+You answered:
+
+The p element with id="intro"
+ Correct Answer!
+
+22. Which jQuery method is used to remove selected elements?
+
+You answered:
+
+remove()
+ Wrong Answer!
+
+23. Look at the following selector: $(":disabled"). What does it select?
+
+You answered:
+
+All disabled input elements
+ Correct Answer!
+
+24. Which jQuery method returns the direct parent element of the selected element?
+
+You answered:
+
+parent()
+ Correct Answer!
+
+25. The jQuery animate() method can be used to animate ANY CSS property?
+
+You answered:
+
+Only properties containing numeric values
+ Correct Answer!
+
+
+By W3Schools	Time spent: 3:27 

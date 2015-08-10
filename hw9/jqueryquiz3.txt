@@ -1,0 +1,15 @@
+1,
+var f = function() {alert("Yea, it's Saturday!");};
+f["temperature"] = "72 degrees";
+f["displayTemperature"] = function(){ alert(f["temperature"]);};
+
+2, They are equivalent, because the parameter e means the element itself in each.
+
+3,
+$("div:has(ul)").css("color", "blue");
+
+4,4 overloaded signatures of the jQuery function: getter, setter, multi-setter, modifier.
+getter: get the property of the object.
+setter: set the property of the object.
+multi-setter: set values to multiple properties
+modifier: modify the value for existing property
