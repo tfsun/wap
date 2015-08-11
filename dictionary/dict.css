@@ -7,4 +7,17 @@ and open the template in the editor.
     Created on : Aug 10, 2015, 2:07:15 PM
     Author     : 984722
 */
-
+body{
+    text-align: left;
+    margin: auto;
+    width: 60%;
+}
+#word {
+    width: 60%;
+    height: 25px;
+}
+button {
+    width: 116px;
+    height: 25px;
+    background-color: green;
+}

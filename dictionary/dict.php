@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        // put your code here
-        ?>
-    </body>
-</html>
+<?php
+    //$ret = array('Chianti', 'Barolo', 'Pinot Noir');
+    //echo json_encode($ret);
+    $word = $_POST["word"];
+    $dbconn = new PDO("mysql:dbname=entries;host=localhost", "root", "root");
+    $dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $dbconn->prepare("SELECT * FROM entries WHERE word = :word");
+    $stmt->execute(array(':word' => $word));
+    $math_defs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    echo json_encode($math_defs);
+?>
