@@ -12,12 +12,38 @@ body{
     margin: auto;
     width: 60%;
 }
+.header {
+    height:80px;
+    margin-top: 10px;
+}
+img#logo {
+    float : left;
+}
+h1.title {
+    display: inline-block;
+    margin-top: 18px;
+    margin-left: 30px;
+}
 #word {
-    width: 60%;
+    width: 520px;
     height: 25px;
+    clear: left;
 }
 button {
     width: 116px;
-    height: 25px;
-    background-color: green;
+    height: 32px;
+    background-color: #3e96f0;
+    color: white;
+    font-size: 18px;
+}
+ol#deflist {
+    margin-left: -20px;
+} 
+ol#deflist li{
+    margin-bottom: 10px;
+}
+#w3ccheck {
+    position: absolute;
+    text-align: left;
+    bottom: 10px;
 }

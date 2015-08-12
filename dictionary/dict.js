@@ -5,18 +5,11 @@
  */
 "use strict";
 $(document).ready(function(){
-//    $("#loader")
-//            .hide()
-//            .ajaxStart(function(){
-//                $(this).show;
-//            }).ajaxStop(function(){
-//                $(thid).hide();
-//            });
     $("#lookup").click(function(){
         var word = $("#word").val();
 //        alert(word);
         $.ajax({
-            url: 'http://localhost/wap/dictionary/dict.php',
+            url: 'dict.php',
             type: 'POST',
             data: {"word" :word}
         })
@@ -26,7 +19,7 @@ $(document).ready(function(){
     function showDefinition(data) {
         var obj=JSON.parse(data);
         for(var i=0; i< obj.length; i++) {
-          $('#explaination').append("<li>" + obj[i]["definition"] + "</li>");
+          $('#deflist').append("<li>wordtype: " + obj[i]["wordtype"] + "<br>definition： " + obj[i]["definition"] + "</li><hr>");
         }
     }
     function showError(data) {
